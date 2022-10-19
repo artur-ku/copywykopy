@@ -17,17 +17,17 @@ public class Comment {
     private long id;
 
     @Setter
-    @Column(name = "creator_id")
+    @JoinColumn(name = "creator_id")
     @ManyToOne
     private User creator;
 
     @Setter
-    @Column(name = "post_id")
+    @JoinColumn(name = "post_id")
     @ManyToOne
     private Post post;
 
     @Setter
-    @Column(name = "parent_comment_id")
+    @JoinColumn(name = "parent_comment_id")
     @ManyToOne
     private Comment parentComment;
 

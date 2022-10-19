@@ -1,6 +1,7 @@
 package pl.sda.copywykopy.rest;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import pl.sda.copywykopy.model.Post;
@@ -16,6 +17,7 @@ import static pl.sda.copywykopy.rest.mapper.PostMapper.toDTO;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/posts")
+@Slf4j
 //transactional?
 
 //crossorigin?

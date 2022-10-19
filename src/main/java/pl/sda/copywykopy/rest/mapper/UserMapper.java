@@ -10,7 +10,7 @@ public class UserMapper {
                 userName(user.getUserName()).
                 userRole(user.getUserRole()).
                 userStatus(user.getUserStatus()).
-                profileId(user.getUserProfile().getId()).
+                profileId(user.getUserProfile() == null ? null : user.getUserProfile().getId()).
                 build();
     }
 

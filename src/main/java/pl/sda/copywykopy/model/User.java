@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Setter
     @Column(name = "user_name")
@@ -32,7 +32,7 @@ public class User {
     private UserStatus userStatus;
 
     @Setter
-    @Column(name = "profile_id")
+    @JoinColumn(name = "profile_id")
     @OneToOne
     private UserProfile userProfile;
 }

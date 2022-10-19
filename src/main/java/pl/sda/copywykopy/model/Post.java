@@ -1,23 +1,24 @@
 package pl.sda.copywykopy.model;
 
 import lombok.*;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Calendar;
 
 @Entity
 @Getter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Table(name = "posts")
 
 public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Setter
     @Column(nullable = false)
@@ -34,8 +35,9 @@ public class Post {
     private LocalDateTime creationTime;
 
     @Setter
-    @Column(name = "creator_id")
+    @JoinColumn(name = "creator_id")
     @ManyToOne
+    @Nullable
     private User creator;
 
     @Setter
